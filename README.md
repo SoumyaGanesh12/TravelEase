@@ -83,9 +83,9 @@ The project demonstrates **15 Gang of Four (GoF) Design Patterns**:
 ## Project Structure
 
 ```
-final-project-milestone-1-group-6/
+TravelEase/
 │
-├── src/main/java/edu/neu/csye7374/
+├── src/main/java/
 │   ├── Driver.java                          # Main entry point
 │   └── travelease/
 │       ├── TravelItemAPI.java               # Core component interface
@@ -178,3 +178,4 @@ The demo will showcase:
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+

@@ -178,7 +178,3 @@ The demo will showcase:
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Note**: This project is part of the academic curriculum for CSYE7374 - Design Patterns at Northeastern University.

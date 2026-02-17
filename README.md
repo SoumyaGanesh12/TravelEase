@@ -80,6 +80,36 @@ The project demonstrates **15 Gang of Four (GoF) Design Patterns**:
 
 ---
 
+## SOLID Principles
+
+The project adheres to all five SOLID principles to ensure a clean, maintainable, and extensible codebase.
+
+| Principle | Description | Example in TravelEase |
+|-----------|-------------|----------------------|
+| **Single Responsibility (SRP)** | Every class has one reason to change | `BookingIdGenerator` handles only ID generation; `Customer` manages only customer data |
+| **Open/Closed (OCP)** | Classes are open for extension but closed for modification | New pricing strategies (e.g. `LoyaltyPricingStrategy`) extend `PricingStrategy` without modifying existing code |
+| **Liskov Substitution (LSP)** | Subtypes can replace their base types without altering correctness | All `BookingProvider` implementations are interchangeable through the `BookingService` bridge abstraction |
+| **Interface Segregation (ISP)** | Clients are not forced to depend on interfaces they don't use | `TravelItemAPI` and `Schedulable` are kept separate so not all travel items are forced to implement scheduling |
+| **Dependency Inversion (DIP)** | High-level modules depend on abstractions, not concretions | `BookingFacadeImpl` depends on `BookingProvider` interface, not concrete API implementations |
+
+---
+
+## OOD Principles
+
+Beyond SOLID, the project applies core Object-Oriented Design principles throughout.
+
+| Principle | Description | Example in TravelEase |
+|-----------|-------------|----------------------|
+| **Encapsulation** | Internal state is hidden and accessed only through well-defined interfaces | `Customer` fields are private, exposed via builder and getters |
+| **Abstraction** | Complexity is hidden behind clean interfaces and abstract classes | `BookingFacadeAPI` abstracts the entire subsystem; `TravelItemAPI` abstracts all bookable components |
+| **Inheritance** | Common behavior is shared through a class hierarchy | `Customer` extends `Person`, reusing shared personal data fields |
+| **Polymorphism** | Objects of different types are treated uniformly through a common interface | All decorators (`MealDecorator`, `InsuranceDecorator`) are treated as `TravelItemAPI` at runtime |
+| **Composition over Inheritance** | Behavior is built by composing objects rather than deep inheritance chains | `TravelPackage` composes multiple `TravelItemAPI` components via the Composite pattern |
+| **Program to Interfaces** | Code depends on abstractions rather than concrete implementations | Adapters (`FlightAPIAdapter`, `HotelAPIAdapter`) all implement a common interface consumed by the facade |
+| **DRY (Don't Repeat Yourself)** | Logic is defined once and reused | `BookingProcessor` template method defines the shared booking workflow skeleton reused across Flight, Hotel, and Car subclasses |
+
+---
+
 ## Project Structure
 
 ```
